@@ -6,6 +6,8 @@
       <!-- The datasource is deployed as ${ds-deployment-location}, you
          can find it in the source at postgres_local-ds.xml -->
       <jta-data-source>java:jboss/datasources/fidelizacion</jta-data-source>
+      <class>com.github.arqweb.fidelus.model.Cliente</class>
+      <class>com.github.arqweb.fidelus.model.Regla</class>
 
       <properties>
          <property name="hibernate.id.new_generator_mappings" value="true"/>
