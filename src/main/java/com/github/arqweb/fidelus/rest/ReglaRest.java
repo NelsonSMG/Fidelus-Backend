@@ -23,8 +23,8 @@ public class ReglaRest {
 
     @POST
     @Path("/")
-    public Response crear(Regla cliente) {
-        this.reglaDAO.agregar(cliente);
+    public Response crear(Regla regla) {
+        this.reglaDAO.agregar(regla);
         return Response.ok().build();
     }
 
@@ -41,9 +41,9 @@ public class ReglaRest {
 
     @PUT
     @Path("/{id}")
-    public Response actualizar(@PathParam(value = "id") Integer id, Regla cliente) {
-        cliente.setId(id);
-        this.reglaDAO.actualizar(cliente);
+    public Response actualizar(@PathParam(value = "id") Integer id, Regla regla) {
+        regla.setId(id);
+        this.reglaDAO.actualizar(regla);
         return Response.ok().build();
     }
 
