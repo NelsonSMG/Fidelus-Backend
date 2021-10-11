@@ -17,8 +17,10 @@ public class ClienteRest {
 
     @GET
     @Path("/")
-    public Response listar() {
-        return Response.ok(clienteDAO.obtenerClientes()).build();
+    public Response listar(@QueryParam("nombre") String nombre,
+                           @QueryParam("apellido") String apellido,
+                           @QueryParam("fechaNacimiento") String fechaNacimiento) {
+        return Response.ok(clienteDAO.obtenerClientesPorParametro(nombre, apellido, fechaNacimiento)).build();
     }
 
     @POST

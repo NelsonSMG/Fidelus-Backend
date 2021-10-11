@@ -23,12 +23,21 @@ public class ClienteDAO {
         return this.em.find(Cliente.class, id);
     }
 
-    public Object obtenerClientes() {
+    public Object obtenerClientesPorParametro(String nombre, String apellido, String fechaNacimiento) {
         List<Cliente> clientes = null;
         Query q = null;
-
-        q = this.em.createQuery("select p from Cliente p");
-
+        if(nombre != null && !nombre.equals("")) {
+            q = this.em.createQuery("select p from Cliente p where p.nombre like :param");
+            q.setParameter("param", "%"+nombre+"%");
+        } else if(apellido != null && !apellido.equals("")) {
+            q = this.em.createQuery("select p from Cliente p where p.apellido like :param");
+            q.setParameter("param", "%"+apellido+"%");
+        } else if(fechaNacimiento != null && !fechaNacimiento.equals("")) {
+            q = this.em.createQuery("select p from Cliente p where to_char(p.fechaNacimiento, 'MM-dd-YYYY') like :param");
+            q.setParameter("param", "%"+fechaNacimiento+"%");
+        } else {
+            q = this.em.createQuery("select p from Cliente p");
+        }
         clientes = (List<Cliente>) q.getResultList();
 
         return clientes;
