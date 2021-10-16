@@ -11,7 +11,8 @@
       <class>com.github.arqweb.fidelus.model.Regla</class>
       <class>com.github.arqweb.fidelus.model.VencimientoPuntos</class>
       <class>com.github.arqweb.fidelus.model.BolsaPuntos</class>
-
+      <class>com.github.arqweb.fidelus.model.CanjePuntos</class>
+      <class>com.github.arqweb.fidelus.model.DetCanjePuntos</class>
       <properties>
          <property name="hibernate.id.new_generator_mappings" value="true"/>
          <property name="hibernate.show_sql" value="true" />
