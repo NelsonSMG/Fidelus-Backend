@@ -10,6 +10,7 @@
       <class>com.github.arqweb.fidelus.model.ConceptoCanje</class>
       <class>com.github.arqweb.fidelus.model.Regla</class>
       <class>com.github.arqweb.fidelus.model.VencimientoPuntos</class>
+      <class>com.github.arqweb.fidelus.model.BolsaPuntos</class>
 
       <properties>
          <property name="hibernate.id.new_generator_mappings" value="true"/>
