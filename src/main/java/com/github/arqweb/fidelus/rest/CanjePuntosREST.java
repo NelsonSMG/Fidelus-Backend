@@ -1,6 +1,5 @@
 package com.github.arqweb.fidelus.rest;
 
-
 import com.github.arqweb.fidelus.ejb.CanjePuntosDAO;
 
 import javax.inject.Inject;
