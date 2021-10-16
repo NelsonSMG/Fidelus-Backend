@@ -35,7 +35,16 @@ public class BolsaPuntosDAO {
     public BolsaPuntos obtenerPorId(Integer id){
         return this.em.find(BolsaPuntos.class, id);
     }
+    public List<BolsaPuntos> obtenerPorIdCliente(Integer idCliente){
+        List<BolsaPuntos> bolsaPuntos = null;
+        Query q = null;
+        q = this.em.createQuery("select b from BolsaPuntos b where b.idCliente = :param");
+        q.setParameter("param", idCliente);
 
+        bolsaPuntos = (List<BolsaPuntos>) q.getResultList();
+
+        return bolsaPuntos;
+    }
     public void eliminar(Integer id) {
         try {
             BolsaPuntos entity = obtenerPorId(id);
