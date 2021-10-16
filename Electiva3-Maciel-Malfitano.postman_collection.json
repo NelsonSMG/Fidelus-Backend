@@ -1,0 +1,721 @@
+{
+	"info": {
+		"_postman_id": "f1709052-1b76-4a5a-a7a3-4e727ba2a4ea",
+		"name": "Electiva3-Maciel-Malfitano",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "getCliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/cliente/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"cliente",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveCliente",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const dateNow = new Date();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"apellido\": \"Spamton\",\r\n    \"nombre\": \"G\",\r\n    \"nroDocumento\": \"01010101\",\r\n    \"tipoDocumento\": \"CI\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"spam@gmail.com\",\r\n    \"telefono\": \"+595(982)4298786\",\r\n    \"fechaNacimiento\": {{$timestamp}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putCliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"matias\",\r\n    \"apellido\": \"fare\",\r\n    \"nroDocumento\": \"5719494\",\r\n    \"tipoDocumento\": \"CI\",\r\n    \"nacionalidad\": \"PY\",\r\n    \"email\": \"matiasfare59@gmail.com\",\r\n    \"telefono\": \"00000\",\r\n    \"fechaNacimiento\": 854334000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/cliente/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"cliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vencimiento Puntos",
+			"item": [
+				{
+					"name": "getVencimientoPuntos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/vencimiento-puntos/listar/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"vencimiento-puntos",
+								"listar",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRegla",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/vencimiento-puntos/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"vencimiento-puntos",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveVencimientoPuntos",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const dateNow = new Date();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaIniValidez\": \"2018-09-28T15:33:32\",\r\n    \"fechaFinValidez\": \"2018-10-28T15:33:32\",\r\n    \"duracion\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/vencimiento-puntos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"vencimiento-puntos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putRegla",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fechaIniValidez\": \"2018-09-28T15:33:32\",\r\n    \"fechaFinValidez\": \"2018-10-28T15:33:32\",\r\n    \"duracion\": 15\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/vencimiento-puntos/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"vencimiento-puntos",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Regla",
+			"item": [
+				{
+					"name": "getRegla",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/regla",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"regla"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRegla",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/regla/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"regla",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveRegla",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const dateNow = new Date();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limiteMin\": 200000,\r\n    \"limiteMax\": 499999,\r\n    \"idVencimiento\": 1,\r\n    \"montoEquivalencia\": 30000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/regla",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"regla"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putRegla",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"limiteMin\": 0,\r\n    \"limiteMax\": 199999,\r\n    \"idVencimiento\": 1,\r\n    \"montoEquivalencia\": 40000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/regla/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"regla",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAmountPerPoints",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const dateNow = new Date();"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/regla/250000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"regla",
+								"250000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ConceptoCanje",
+			"item": [
+				{
+					"name": "getAllConceptoCanje",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": null,\n\t\"descConcepto\": \"vale de premio\",\n\t\"puntosRequeridos\": 150\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/concepto-canje",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"concepto-canje"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveConceptoCanje",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descConcepto\": \"valeee de premio\",\n\t\"puntosRequeridos\": 150\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/concepto-canje",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"concepto-canje"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "putConceptoCanje",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"descConcepto\": \"premios\",\n\t\"puntosRequeridos\": 1500\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/fidelus/concepto-canje/7",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"concepto-canje",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteConceptoCanje",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/concepto-canje/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"concepto-canje",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BolsaPuntos",
+			"item": [
+				{
+					"name": "obtenerBolsaPuntos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/bolsa-puntos?idCliente=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"bolsa-puntos"
+							],
+							"query": [
+								{
+									"key": "rangoInicio",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "rangoFin",
+									"value": "150",
+									"disabled": true
+								},
+								{
+									"key": "idCliente",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "calcBolsaPuntos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/bolsa-puntos?idCliente=2&monto=250000",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"bolsa-puntos"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "2"
+								},
+								{
+									"key": "monto",
+									"value": "250000"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CanjePuntos",
+			"item": [
+				{
+					"name": "canje-puntos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/canje-puntos?idCliente=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"canje-puntos"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET concepto canje-puntos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/canje-puntos/listar/concepto?idConcepto=3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"canje-puntos",
+								"listar",
+								"concepto"
+							],
+							"query": [
+								{
+									"key": "idConcepto",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Canjes de Cliente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/canje-puntos/listar/cliente?idCliente=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"canje-puntos",
+								"listar",
+								"cliente"
+							],
+							"query": [
+								{
+									"key": "idCliente",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get canjes por fecha YYYY-MM-dd",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/canje-puntos/listar/fecha-uso?fechaCanje=2020-09-13",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"canje-puntos",
+								"listar",
+								"fecha-uso"
+							],
+							"query": [
+								{
+									"key": "fechaCanje",
+									"value": "2020-09-13"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "canjear-puntos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/canje-puntos/canjear?idConceptoCanje=3&idCliente=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"canje-puntos",
+								"canjear"
+							],
+							"query": [
+								{
+									"key": "idConceptoCanje",
+									"value": "3"
+								},
+								{
+									"key": "idCliente",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
