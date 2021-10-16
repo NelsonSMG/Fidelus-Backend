@@ -1,6 +1,7 @@
 package com.github.arqweb.fidelus.ejb;
 
 import com.github.arqweb.fidelus.model.Regla;
+import com.github.arqweb.fidelus.model.VencimientoPuntos;
 
 import java.util.Date;
 import java.util.List;
@@ -16,6 +17,8 @@ public class ReglaDAO {
 
     @PersistenceContext(unitName = "fidelizacionPU")
     private EntityManager em;
+    @Inject
+    private VencimientoPuntosDAO vencimientoPuntosDAO;
 
     public Object obtenerReglas() {
         Query q = this.em.createQuery("select p from Regla p");
@@ -42,6 +45,27 @@ public class ReglaDAO {
 
     public void actualizar(Regla entidad) {
         this.em.merge(entidad);
+    }
+
+    public Integer obtenerEquivalenciaPuntos(Integer montoTotal) throws Exception {
+        Query q = this.em.createQuery("select p from Regla p");
+        List<Regla> reglas = (List<Regla>) q.getResultList();
+        Date today = new Date();
+        for(Regla regla : reglas) {
+            if(regla.getLimiteMax() == null && regla.getLimiteMin() == null) {
+                VencimientoPuntos vencimiento = vencimientoPuntosDAO.obtenerVencimiento(regla.getIdVencimiento());
+                if(vencimiento.getFechaIniValidez().before(today) && vencimiento.getFechaFinValidez().after(today)) {
+                    return montoTotal/regla.getMontoEquivalencia();
+                }
+            }
+            else if(montoTotal <= regla.getLimiteMax() && montoTotal >= regla.getLimiteMin()) {
+                VencimientoPuntos vencimiento = vencimientoPuntosDAO.obtenerVencimiento(regla.getIdVencimiento());
+                if(vencimiento.getFechaIniValidez().before(today) && vencimiento.getFechaFinValidez().after(today)) {
+                    return montoTotal/regla.getMontoEquivalencia();
+                }
+            }
+        }
+        throw new Exception("Regla inexistente");
     }
 
 }

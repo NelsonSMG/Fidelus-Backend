@@ -28,6 +28,16 @@ public class ReglaRest {
         return Response.ok().build();
     }
 
+    @POST
+    @Path("/{monto}")
+    public Response obtenerEquivalenciaPuntos(@PathParam(value = "monto") Integer monto) throws Exception {
+        try {
+            return Response.ok(this.reglaDAO.obtenerEquivalenciaPuntos(monto)).build();
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
     @DELETE
     @Path("/{id}")
     public Response eliminar(@PathParam(value = "id") Integer id) {
