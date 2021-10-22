@@ -2,6 +2,8 @@ package com.github.arqweb.fidelus.ejb;
 
 import com.github.arqweb.fidelus.model.Cliente;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -38,6 +40,22 @@ public class ClienteDAO {
         } else {
             q = this.em.createQuery("select p from Cliente p");
         }
+        clientes = (List<Cliente>) q.getResultList();
+
+        return clientes;
+    }
+
+    public Object obtenerClientePuntosAVencer(Integer dias){
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(new Date());
+        calendar.add(Calendar.DATE, dias); //agregamos los días
+        Date dateToLookBackAfter = calendar.getTime();
+
+        List<Cliente> clientes = null;
+        Query q = null;
+        q = this.em.createQuery("select c from BolsaPuntos b join Cliente c on b.idCliente = c.id where b.fechaVencimiento < :param");
+        q.setParameter("param", dateToLookBackAfter);
         clientes = (List<Cliente>) q.getResultList();
 
         return clientes;

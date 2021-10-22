@@ -23,6 +23,12 @@ public class ClienteRest {
         return Response.ok(clienteDAO.obtenerClientesPorParametro(nombre, apellido, fechaNacimiento)).build();
     }
 
+    @GET
+    @Path("/vencer")
+    public Response obtenerClientesAVencer(@QueryParam("dias") Integer dias){
+        return Response.ok(clienteDAO.obtenerClientePuntosAVencer(dias)).build();
+    }
+
     @POST
     @Path("/")
     public Response crear(Cliente cliente) {

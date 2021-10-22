@@ -22,6 +22,18 @@
 							"path": [
 								"fidelus",
 								"cliente"
+							],
+							"query": [
+								{
+									"key": "apellido",
+									"value": "M",
+									"disabled": true
+								},
+								{
+									"key": "nombre",
+									"value": "E",
+									"disabled": true
+								}
 							]
 						}
 					},
@@ -110,6 +122,32 @@
 								"fidelus",
 								"cliente",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getClientePuntosAVencer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/fidelus/cliente/vencer?dias=30",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fidelus",
+								"cliente",
+								"vencer"
+							],
+							"query": [
+								{
+									"key": "dias",
+									"value": "30"
+								}
 							]
 						}
 					},
@@ -342,7 +380,7 @@
 					"response": []
 				},
 				{
-					"name": "getAmountPerPoints",
+					"name": "obtenerEquivalenciaPuntos",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -358,7 +396,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/regla/250000",
+							"raw": "localhost:8080/fidelus/regla/190000",
 							"host": [
 								"localhost"
 							],
@@ -366,7 +404,7 @@
 							"path": [
 								"fidelus",
 								"regla",
-								"250000"
+								"190000"
 							]
 						}
 					},
@@ -496,7 +534,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/bolsa-puntos?idCliente=2",
+							"raw": "localhost:8080/fidelus/bolsa-puntos",
 							"host": [
 								"localhost"
 							],
@@ -518,7 +556,8 @@
 								},
 								{
 									"key": "idCliente",
-									"value": "2"
+									"value": "2",
+									"disabled": true
 								}
 							]
 						}
@@ -531,7 +570,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/bolsa-puntos?idCliente=2&monto=250000",
+							"raw": "localhost:8080/fidelus/bolsa-puntos?idCliente=6&monto=150000",
 							"host": [
 								"localhost"
 							],
@@ -543,11 +582,11 @@
 							"query": [
 								{
 									"key": "idCliente",
-									"value": "2"
+									"value": "6"
 								},
 								{
 									"key": "monto",
-									"value": "250000"
+									"value": "150000"
 								}
 							]
 						}
