@@ -18,7 +18,7 @@ public class ConceptoCanjeDAO {
 
     public ConceptoCanje obtenerConceptoCanje(Integer id) {return this.em.find(ConceptoCanje.class, id);}
 
-    public Object obtenerClientesPorParametro() {
+    public Object obtenerConceptosCanje() {
         List<ConceptoCanje> conceptosCanje = null;
         Query q = null;
 

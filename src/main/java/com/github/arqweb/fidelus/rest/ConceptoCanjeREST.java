@@ -17,7 +17,7 @@ public class ConceptoCanjeREST {
     @GET
     @Path("/")
     public Response listar() {
-        return Response.ok(conceptoCanjeDao.obtenerClientesPorParametro()).build();
+        return Response.ok(conceptoCanjeDao.obtenerConceptosCanje()).build();
     }
 
     @POST

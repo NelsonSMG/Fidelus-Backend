@@ -20,12 +20,6 @@ public class CanjePuntosREST {
         return Response.ok(canjePuntosDAO.obtenerCanjePuntos()).build();
     }
 
-    @GET
-    @Path("/listar/cliente")
-    public Response listarPorIdCliente(@QueryParam("idCliente") Integer idCliente){
-        return Response.ok(canjePuntosDAO.obtenerCanjePuntosPorId(idCliente)).build();
-    }
-
     @POST
     @Path("/canjear")
     public Response canjearPuntos(@QueryParam("idCliente") Integer idCliente,
@@ -38,10 +32,17 @@ public class CanjePuntosREST {
     public Response listarPorConcepto(@QueryParam("idConcepto") Integer idConcepto){
         return Response.ok(canjePuntosDAO.obtenerCanjesPorConceptoUso(idConcepto)).build();
     }
+
     @GET
     @Path("/listar/cliente")
     public Response listarPorCliente(@QueryParam("idCliente") Integer idCliente){
         return Response.ok(canjePuntosDAO.obtenerCanjesPorIdCliente(idCliente)).build();
+    }
+
+    @GET
+    @Path("/listar/canje")
+    public Response listarPorId(@QueryParam("idCanje") Integer idCanje){
+        return Response.ok(canjePuntosDAO.obtenerCanjePuntosPorId(idCanje)).build();
     }
 
     @GET
