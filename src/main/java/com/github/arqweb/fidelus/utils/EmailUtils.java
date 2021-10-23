@@ -29,9 +29,10 @@ public class EmailUtils {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", host);
-        props.put("mail.smtp.user", "arquiwebclass@gmail.com");
-        props.put("mail.smtp.password", "arquiweb");
+        props.put("mail.smtp.user", "nelsonsmalfitano@fpuna.edu.py");
+        props.put("mail.smtp.password", "PASS");
         props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 
         // Get the Session object
         Session session = Session.getInstance(props,
