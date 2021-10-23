@@ -9,7 +9,7 @@ import javax.ws.rs.core.Response;
 @Path("bolsa-puntos")
 @Consumes("application/json")
 @Produces("application/json")
-public class BolsaPuntosRest {
+public class BolsaPuntosREST {
 
     @Inject
     private BolsaPuntosDAO bolsaPuntosDAO;
@@ -24,7 +24,7 @@ public class BolsaPuntosRest {
         }else if (rangoFin != null && rangoInicio != null){
             return  Response.ok(bolsaPuntosDAO.obtenerPorRangoPuntos(rangoInicio, rangoFin)).build();
         } else {
-            return  Response.ok("Envie algun parametro(idCliente,rangoInicio and rangoFin)").build();
+            return Response.ok(bolsaPuntosDAO.listar()).build();
         }
     }
 

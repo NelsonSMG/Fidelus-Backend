@@ -10,7 +10,7 @@ import javax.ws.rs.core.Response;
 @Path("cliente")
 @Consumes("application/json")
 @Produces("application/json")
-public class ClienteRest {
+public class ClienteREST {
 
     @Inject
     private ClienteDAO clienteDAO;

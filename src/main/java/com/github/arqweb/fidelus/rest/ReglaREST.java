@@ -10,7 +10,7 @@ import javax.ws.rs.core.Response;
 @Path("regla")
 @Consumes("application/json")
 @Produces("application/json")
-public class ReglaRest {
+public class ReglaREST {
 
     @Inject
     private ReglaDAO reglaDAO;
