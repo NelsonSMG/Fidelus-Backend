@@ -22,9 +22,9 @@ Para generar war:
 
 Levantar con Wildfly:
 
-- Confirmar de que en el archivo standalone.xml se encuentran los datos correctos para la conexón del datasource.
+- Confirmar de que en el archivo standalone.xml se encuentran los datos correctos para la conexón a la base de datos.
 - Limpiar las carpetas standalone/deployments, standalone/data y standalone/tmp
 - Copiar el war generado por el package realizado en el paso anterior al directorio standalone/deployments
-- Ubirarse en la carpeta bin del Wildfly dentro de línea de comando y ejecutar el script de inicio del wildfly ```sh standalone.sh```
+- Ubicarse en la carpeta bin del Wildfly dentro de línea de comando y ejecutar el script de inicio del wildfly ```sh standalone.sh```
 
 La aplicación estará disponible en **http://localhost:8080/fidelus**
