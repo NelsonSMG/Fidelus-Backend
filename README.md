@@ -4,26 +4,27 @@ Backend para la segunda parcial de Arquitectura Web
 
 ### Pasos
 
+Crear la base de datos ```fidelizacion``` en postgres
+
+Una vez dentro, ejecutar el script ```scriptbasededatos.sql``` para la creacion de tablas y demás
+
 Clonar el proyecto
 
 Correr los siguientes comandos
 
-Para instalar dependencias 
+Para instalar dependencias:
 
 ```mvn clean install```
 
-Para generar war
+Para generar war:
 
 ```mvn clean package```
 
-Abrir la carpeta del proyecto en IntelliJ, este debería realizar las configuraciones necesarias automaticamente
+Levantar con Wildfly:
 
-Agregar Servidor Wildfly para el Despliegue
-
-Realizar configuraciones necesarias
-
-Seleccionar ```Fidelus:war exploded``` en la pestaña de deployments
-
-Hacer correr el proyecto
+- Confirmar de que en el archivo standalone.xml se encuentran los datos correctos para la conexón a la base de datos.
+- Limpiar las carpetas standalone/deployments, standalone/data y standalone/tmp
+- Copiar el war generado por el package realizado en el paso anterior al directorio standalone/deployments
+- Ubicarse en la carpeta bin del Wildfly dentro de línea de comando y ejecutar el script de inicio del wildfly ```sh standalone.sh```
 
 La aplicación estará disponible en **http://localhost:8080/fidelus**
