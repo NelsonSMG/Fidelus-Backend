@@ -2,6 +2,8 @@
 
 Backend para la segunda parcial de Arquitectura Web
 
+El front-end puede encontrarse aquí **https://github.com/NelsonSMG/Parcial1-ARQ-WEB**
+
 ### Pasos
 
 Crear la base de datos ```fidelizacion``` en postgres
