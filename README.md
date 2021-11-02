@@ -16,14 +16,11 @@ Para generar war
 
 ```mvn clean package```
 
-Abrir la carpeta del proyecto en IntelliJ, este debería realizar las configuraciones necesarias automaticamente
+Levantar con Wildfly
 
-Agregar Servidor Wildfly para el Despliegue
-
-Realizar configuraciones necesarias
-
-Seleccionar ```Fidelus:war exploded``` en la pestaña de deployments
-
-Hacer correr el proyecto
+    Confirmar de que en el archivo standalone.xml se encuentran los datos correctos para la conexón del datasource.
+    Limpiar las carpetas standalone/deployments, standalone/data y standalone/tmp
+    Copiar el war generado por el package realizado en el paso anterior al directorio standalone/deployments
+    Ejecutar el script de inicio del wildfly ```sh standalone.sh```
 
 La aplicación estará disponible en **http://localhost:8080/fidelus**
