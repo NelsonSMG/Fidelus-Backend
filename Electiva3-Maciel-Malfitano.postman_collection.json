@@ -14,7 +14,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/cliente",
+							"raw": "localhost:8080/fidelus/cliente?fechaNacimiento=01-19",
 							"host": [
 								"localhost"
 							],
@@ -26,13 +26,17 @@
 							"query": [
 								{
 									"key": "apellido",
-									"value": "M",
+									"value": "Maci",
 									"disabled": true
 								},
 								{
 									"key": "nombre",
-									"value": "E",
+									"value": "Nel",
 									"disabled": true
+								},
+								{
+									"key": "fechaNacimiento",
+									"value": "01-19"
 								}
 							]
 						}
@@ -77,7 +81,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"apellido\": \"Spamton\",\r\n    \"nombre\": \"G\",\r\n    \"nroDocumento\": \"01010101\",\r\n    \"tipoDocumento\": \"CI\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"spam@gmail.com\",\r\n    \"telefono\": \"+595(982)4298786\",\r\n    \"fechaNacimiento\": {{$timestamp}}\r\n}",
+							"raw": "{\r\n    \"apellido\": \"Spam\",\r\n    \"nombre\": \"G\",\r\n    \"nroDocumento\": \"01010101\",\r\n    \"tipoDocumento\": \"CI\",\r\n    \"nacionalidad\": \"Paraguaya\",\r\n    \"email\": \"spam@gmail.com\",\r\n    \"telefono\": \"+595(982)4298786\",\r\n    \"fechaNacimiento\": \"2020-07-21\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -105,7 +109,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"id\": 1,\r\n        \"nombre\": \"Nelson\",\r\n        \"apellido\": \"Malfitano\",\r\n        \"nroDocumento\": \"5165337\",\r\n        \"tipoDocumento\": \"CI\",\r\n        \"nacionalidad\": \"PY\",\r\n        \"email\": \"nelsonsmalfitano@gmail.com\",\r\n        \"telefono\": \"987342\",\r\n        \"fechaNacimiento\": 854334000000\r\n    }",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"nombre\": \"Nelson\",\r\n        \"apellido\": \"Malfitano\",\r\n        \"nroDocumento\": \"5165337\",\r\n        \"tipoDocumento\": \"CI\",\r\n        \"nacionalidad\": \"PY\",\r\n        \"email\": \"nelsonsmalfitano@gmail.com\",\r\n        \"telefono\": \"987342\",\r\n        \"fechaNacimiento\": \"2020-01-01\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -133,7 +137,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/cliente/vencer?dias=30",
+							"raw": "localhost:8080/fidelus/cliente/vencer?dias=3",
 							"host": [
 								"localhost"
 							],
@@ -146,7 +150,7 @@
 							"query": [
 								{
 									"key": "dias",
-									"value": "30"
+									"value": "3"
 								}
 							]
 						}
@@ -297,7 +301,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/regla/2",
+							"raw": "localhost:8080/fidelus/regla/5",
 							"host": [
 								"localhost"
 							],
@@ -305,7 +309,7 @@
 							"path": [
 								"fidelus",
 								"regla",
-								"2"
+								"5"
 							]
 						}
 					},
@@ -329,7 +333,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"limiteMin\": 500000,\r\n    \"limiteMax\": 799999,\r\n    \"idVencimiento\": 1,\r\n    \"montoEquivalencia\": 20000\r\n}",
+							"raw": "{\r\n    \"limiteMin\": 800000,\r\n    \"limiteMax\": 999999,\r\n    \"idVencimiento\": 1,\r\n    \"montoEquivalencia\": 40000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -396,7 +400,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/regla/410000",
+							"raw": "localhost:8080/fidelus/regla/550000",
 							"host": [
 								"localhost"
 							],
@@ -404,7 +408,7 @@
 							"path": [
 								"fidelus",
 								"regla",
-								"410000"
+								"550000"
 							]
 						}
 					},
@@ -534,7 +538,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/bolsa-puntos",
+							"raw": "localhost:8080/fidelus/bolsa-puntos?rangoInicio=1&rangoFin=10",
 							"host": [
 								"localhost"
 							],
@@ -546,13 +550,11 @@
 							"query": [
 								{
 									"key": "rangoInicio",
-									"value": "1",
-									"disabled": true
+									"value": "1"
 								},
 								{
 									"key": "rangoFin",
-									"value": "2",
-									"disabled": true
+									"value": "10"
 								},
 								{
 									"key": "idCliente",
@@ -570,7 +572,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/bolsa-puntos?idCliente=6&monto=410000",
+							"raw": "localhost:8080/fidelus/bolsa-puntos?idCliente=1&monto=550000",
 							"host": [
 								"localhost"
 							],
@@ -582,11 +584,11 @@
 							"query": [
 								{
 									"key": "idCliente",
-									"value": "6"
+									"value": "1"
 								},
 								{
 									"key": "monto",
-									"value": "410000"
+									"value": "550000"
 								}
 							]
 						}
@@ -650,7 +652,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/canje-puntos/listar/cliente?idCliente=2",
+							"raw": "localhost:8080/fidelus/canje-puntos/listar/cliente?idCliente=1",
 							"host": [
 								"localhost"
 							],
@@ -664,7 +666,7 @@
 							"query": [
 								{
 									"key": "idCliente",
-									"value": "2"
+									"value": "1"
 								}
 							]
 						}
@@ -677,7 +679,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/canje-puntos/listar/concepto?idConcepto=3",
+							"raw": "localhost:8080/fidelus/canje-puntos/listar/concepto?idConcepto=2",
 							"host": [
 								"localhost"
 							],
@@ -691,7 +693,7 @@
 							"query": [
 								{
 									"key": "idConcepto",
-									"value": "3"
+									"value": "2"
 								}
 							]
 						}
@@ -704,7 +706,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/canje-puntos/listar/fecha-uso?fechaCanje=2020-09-13",
+							"raw": "localhost:8080/fidelus/canje-puntos/listar/fecha-uso?fechaCanje=2020-11-05",
 							"host": [
 								"localhost"
 							],
@@ -718,7 +720,7 @@
 							"query": [
 								{
 									"key": "fechaCanje",
-									"value": "2020-09-13"
+									"value": "2020-11-05"
 								}
 							]
 						}
@@ -731,7 +733,7 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/fidelus/canje-puntos/canjear?idConceptoCanje=2&idCliente=1",
+							"raw": "localhost:8080/fidelus/canje-puntos/canjear?idConceptoCanje=1&idCliente=1",
 							"host": [
 								"localhost"
 							],
@@ -744,7 +746,7 @@
 							"query": [
 								{
 									"key": "idConceptoCanje",
-									"value": "2"
+									"value": "1"
 								},
 								{
 									"key": "idCliente",
